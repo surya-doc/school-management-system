@@ -1,0 +1,28 @@
+<div class="class container">
+    <div class="manage_heading_section">
+        <div class="left">All classs</div>
+        <div class="right">
+            <button type="button" class="btn add_class_btn" (click)="openEdit()">
+                Add class
+                <span class="add_icon">
+                    <mat-icon>add</mat-icon>
+                </span>
+            </button>
+            <!-- <app-dropdown [options]="sortOptions"></app-dropdown> -->
+        </div>
+    </div>
+    <div class="container c">
+        <div class="all_class row">
+            <div class="class col-6" *ngFor="let class of classes">
+                <app-class-card [item]="class"></app-class-card>
+            </div>
+        </div>
+        <div class="pagination_button_container">
+            <button class="prev_btn" (click)="prevClick()" [disabled]="pageNo === 0"><mat-icon>arrow_left</mat-icon>prev</button>
+            <button class="next_btn" (click)="nextClick()" [disabled]="classes.length === 0 || classes.length < 5">next	<mat-icon>arrow_right</mat-icon></button>
+        </div>
+    </div>
+</div>
+
+
+<app-class-create-update  [item]="" [opType]="opType" *ngIf="edit" (close)="closeEdit()"></app-class-create-update>

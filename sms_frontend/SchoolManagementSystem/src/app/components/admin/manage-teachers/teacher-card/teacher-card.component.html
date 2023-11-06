@@ -1,0 +1,21 @@
+<div class="teacher_card container row">
+    <div class="teacher_profile_pic col-lg-1 col-md-1">
+        <img *ngIf="item?.profile_pic" [src]="'data:image/png;base64,' + item?.profile_pic" alt="">
+        <img *ngIf="!item?.profile_pic" src="https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460_1280.png" alt="g">
+    </div>
+    <div class="teacher_name col-lg-2 col-md-3">{{item?.full_name}}</div>
+    <div class="teacher_email col-lg-3 col-md-4">{{item?.email}}</div>
+    <div class="teacher_ph_no col-lg-3 col-md-3">{{item?.ph_number | phonenoFormatter}}</div>
+    <div class="detail_view col-lg-2 col-md-6 my-md-2 col-sm-6">
+        <button class="btn view_detail_btn" (click)="getTeacher()">View</button>
+    </div>
+    <div class="teacher_edit_delete col-lg-1 col-md-2 col-sm-2" *ngIf="role === 'admin'">
+        <div class="edit_option" (click)="openEdit()"><mat-icon class="edit">edit</mat-icon></div>
+        <div class="delete_option" (click)="deleteTeacher()">
+            <mat-icon class="delete">delete_outline</mat-icon>
+        </div>
+    </div>
+</div>
+
+<app-teacher-details [item]="teacherDetail" *ngIf="isPopupOpen" (close)="closePopup()"></app-teacher-details>
+<app-teacher-create-update [teacherDetail]="teacherDetail" [opType]="opType" *ngIf="edit && teacherDetail" (close)="closeEdit()"></app-teacher-create-update>

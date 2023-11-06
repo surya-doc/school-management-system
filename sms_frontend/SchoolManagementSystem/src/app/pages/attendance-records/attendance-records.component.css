@@ -1,0 +1,21 @@
+.manage_heading_section{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #eae6f5;
+    border-bottom: 2px solid #4b208c;
+    padding: 10px 20px;
+    margin-bottom: 3rem;
+}
+
+.record-container{
+    margin-top: 2rem;
+}
+
+td,th{
+    text-align: center;
+}
+
+strong{
+    text-decoration: underline;
+}

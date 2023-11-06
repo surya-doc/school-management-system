@@ -1,0 +1,25 @@
+<div class="notice_container container">
+    <div class="manage_heading_section">
+        <div class="left">All Notices</div>
+        <div class="right">
+            <button type="button" class="btn add_notice_btn" (click)="openEdit()">
+                Add Notice
+                <span class="add_icon">
+                    <mat-icon>add</mat-icon>
+                </span>
+            </button>
+            <!-- <app-dropdown [options]="sortOptions"></app-dropdown> -->
+        </div>
+    </div>
+    <div class="all_notice_container">
+        <div class="notices" *ngFor="let notice of allNotices">
+            <app-notice-card [item]="notice"></app-notice-card>
+        </div>
+        <div class="pagination_button_container">
+            <button class="prev_btn" (click)="prevClick()" [disabled]="pageNo === 0"><mat-icon>arrow_left</mat-icon>prev</button>
+            <button class="next_btn" (click)="nextClick()" [disabled]="allNotices?.length === 0 || allNotices?.length < 10">next<mat-icon>arrow_right</mat-icon></button>
+        </div>
+    </div>
+    </div>
+
+<app-create-notice  [item]="" [opType]="opType" *ngIf="edit" (close)="closeEdit()"></app-create-notice>

@@ -1,0 +1,4 @@
+<select id="options" class="btn dropdown" (change)="onSelect($event)">
+  <option >Sort By</option>
+  <option *ngFor="let option of options" [value]="option">{{ option }}</option>
+</select>

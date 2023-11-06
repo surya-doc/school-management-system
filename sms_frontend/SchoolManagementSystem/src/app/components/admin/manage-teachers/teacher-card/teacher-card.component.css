@@ -1,0 +1,36 @@
+.teacher_card{
+    display: flex;
+    justify-content: space-between;
+    border: 1px solid #79A3B1;
+    align-items: center;
+    padding: 6px 20px;
+    box-shadow: 0px 1px 10px 2px rgba(69, 98, 104, 0.2);
+    margin: 0;
+}
+
+.teacher_profile_pic img{
+    width: 2.8rem;
+    height: 2.8rem;
+    border-radius: 50%;
+    border: 1px solid #cfcfcf;
+}
+
+.teacher_edit_delete{
+    display: flex;
+}
+
+.edit_option{
+    color: #919191;
+    padding: 0px 10px;
+    cursor: pointer;
+}
+
+.delete_option{
+    color: #C70039;
+    padding: 0px 0px 0px 10px;
+    cursor: pointer;
+}
+
+.view_detail_btn{
+    background-color: #79A3B1;
+}

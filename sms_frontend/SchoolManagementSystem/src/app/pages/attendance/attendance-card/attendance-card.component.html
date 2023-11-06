@@ -1,0 +1,12 @@
+<div class="student_card container row">
+    <div class="student_name col-lg-2">{{item?.full_name}}</div>
+    <div class="student_email col-lg-3">{{item?.email}}</div>
+    <div class="student_ph_no col-lg-3">{{item?.ph_number | phonenoFormatter}}</div>
+    <div class="student_gender col-lg-1">{{item?.gender}}</div>
+    <div class="col-lg-1">
+        <button class="btn view_detail_btn" (click)="addPresentAttendance()">Present</button>
+    </div>
+    <div class="col-lg-1">
+        <button class="btn view_detail_btn" (click)="addAbsentAttendance()">Absent</button>
+    </div>
+</div>

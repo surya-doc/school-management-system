@@ -1,0 +1,116 @@
+<nav
+  class="navbar sticky-top navbar-expand-md navbar-light container-fluid"
+  style="background-color: #eae6f5"
+>
+  <a class="navbar-brand" href="#">
+    <img
+      src="../../assets/school_logo.png"
+      width="40"
+      height="40"
+      class="d-inline-block align-center"
+      alt=""
+    />
+    Argus School
+  </a>
+  <button
+    class="navbar-toggler"
+    type="button"
+    data-toggle="collapse"
+    data-target="#navbarNavAltMarkup"
+    aria-controls="navbarNavAltMarkup"
+    aria-expanded="false"
+    aria-label="Toggle navigation"
+    (click)="toggleCollapsed()"
+  >
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  <div
+    class="collapse navbar-collapse justify-content-end"
+    id="navbarNavAltMarkup"
+    [ngClass]="{ collapse: collapsed, 'navbar-collapse': true }"
+  >
+    <div class="navbar-nav">
+      <a class="nav-item nav-link text-nowrap" routerLink="">Home</a>
+      <a class="nav-item nav-link text-nowrap" routerLink="about-us">About Us</a>
+      <a class="nav-item nav-link text-nowrap" routerLink="contact-us">Contact Us</a>
+      <div *ngIf="!LoggedIn; else Logged" class="input-group">
+        <button
+          type="button"
+          class="btn btn-sm"
+          routerLink="login"
+          style="
+            background-color: #4b208c;
+            color: white;
+            margin-left: 10px;
+            padding: 10px 30px;
+          "
+        >
+          Login
+        </button>
+      </div>
+      <ng-template #Logged>
+        <div class="icon" *ngIf="role !== 'admin'">
+          <mat-icon class="profile_icon" style="font-size: 1.6rem" routerLink="profile"
+            >account_circle</mat-icon
+          >
+        </div>
+
+        <div class="drop_container" *ngIf="role === 'admin'">
+          <button
+            class="btn btn-secondary"
+            type="button"
+            (click)="toggleDropDown()"
+          >
+            Manage
+          </button>
+          <div class="dropdowns" *ngIf="dropdown">
+            <a class="dropdown-item" routerLink="manage-teachers" (click)="toggleDropDown()">Teachers</a>
+            <a class="dropdown-item" routerLink="manage-students" (click)="toggleDropDown()">Students</a>
+            <a class="dropdown-item" routerLink="manage-classes"(click)="toggleDropDown()">Classes</a>
+            <a class="dropdown-item" routerLink="manage-notices"(click)="toggleDropDown()">Notices</a>
+            <a class="dropdown-item" routerLink="attendance-records" (click)="toggleDropDown()">View Attendance</a>
+          </div>
+        </div>
+        <div class="drop_container" *ngIf="role === 'teacher'">
+          <button
+            class="btn btn-secondary"
+            type="button"
+            (click)="toggleDropDown()"
+          >
+            Manage
+          </button>
+          <div class="dropdowns shadow" *ngIf="dropdown">
+            <a class="dropdown-item" routerLink="manage-students" (click)="toggleDropDown()">Students</a>
+            <a class="dropdown-item" routerLink="manage-teachers" (click)="toggleDropDown()">View Teachers</a>
+            <a class="dropdown-item" routerLink="manage-attendance" (click)="toggleDropDown()">Mark Attendance</a>
+            <a class="dropdown-item" routerLink="attendance-records" (click)="toggleDropDown()">View Attendance</a>
+          </div>
+        </div>
+        <div class="drop_container" *ngIf="role === 'student'">
+          <button
+            class="btn btn-secondary"
+            type="button"
+            (click)="toggleDropDown()"
+          >
+            View
+          </button>
+          <div class="dropdowns shadow" *ngIf="dropdown">
+            <a class="dropdown-item" routerLink="manage-students" (click)="toggleDropDown()">Students</a>
+            <a class="dropdown-item" routerLink="manage-teachers" (click)="toggleDropDown()">Teachers</a>
+            <a class="dropdown-item" routerLink="attendance-records" (click)="toggleDropDown()">Attendance</a>
+          </div>
+        </div>
+        <div class="logout-button">
+          <button
+          type="button"
+          class="btn btn-secondary"
+          style="margin-left: 0.5rem; background-color: #4b208c; color: white;"
+          (click)="logout()"
+        >
+          Logout
+        </button>
+        </div>
+      </ng-template>
+    </div>
+  </div>
+</nav>

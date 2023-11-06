@@ -1,0 +1,71 @@
+<div class="popup">
+    <div class="popup-content shadow">
+      <div class="close_op"><mat-icon (click)="closePopup()">close</mat-icon></div>
+        <div class="student_basic_details row">
+          <div class="left profile_pic col-lg-4">
+            <img *ngIf="item?.profilePic" [src]="'data:image/png;base64,' + item?.profilePic" alt="">
+            <img *ngIf="!item?.profilePic && item?.gender === 'Male'" src="https://www.svgrepo.com/show/382109/male-avatar-boy-face-man-user-7.svg" alt="g">
+            <img *ngIf="!item?.profilePic && item?.gender === 'Female'" src="https://www.svgrepo.com/show/382097/female-avatar-girl-face-woman-user-9.svg" alt="g">
+          </div>
+          <div class="right profile_details col-lg-8">
+            <div class="ind_detail">
+              <p>Name: </p>
+              <div class="std_text student_name">{{item?.fullName}}</div>
+            </div>
+            <div class="ind_detail">
+              <p>Email: </p>
+              <div class="std_text student_email">{{item?.email}}</div>
+            </div>
+            <div class="ind_detail">
+              <p>Phone: </p>
+              <div class="std_text student_ph_no">{{item?.phoneNumber}}</div>
+            </div>
+            <div class="ind_detail">
+              <p>Gender: </p>
+              <div class="std_text student_gender">{{item?.gender}}</div>
+            </div>
+            <div class="ind_detail">
+              <p>Dob: </p>
+              <div class="std_text student_dob">{{item?.dob | date}}</div>
+            </div>
+            <div class="ind_detail hobby_container">
+              <p>Hobbies: </p>
+              <div class="hobbies" *ngFor="let hobby of item?.hobbies">{{hobby}}</div>
+            </div>
+          </div>
+        </div>
+        <div class="address">
+          <div class="current_address">
+            <h4>Current Address</h4>
+            <div class="address_detail">
+              <h5>Street</h5>
+              <p>{{item?.current_Address.street_address}}</p>
+              <h5>City</h5>
+              <p>{{item?.current_Address.city}}</p>
+              <h5>Pin code</h5>
+              <p>{{item?.current_Address.postal_code}}</p>
+              <h5>State</h5>
+              <p>{{item?.current_Address.state}}</p>
+              <h5>Country</h5>
+              <p>{{item?.current_Address.country}}</p>
+            </div>
+          </div>
+          <div class="permanent_address">
+            <h4>Permanent Address</h4>
+            <div class="address_detail">
+              <h5>Street</h5>
+              <p>{{item?.permanent_Address.street_address}}</p>
+              <h5>City</h5>
+              <p>{{item?.permanent_Address.city}}</p>
+              <h5>Pin code</h5>
+              <p>{{item?.permanent_Address.postal_code}}</p>
+              <h5>State</h5>
+              <p>{{item?.permanent_Address.state}}</p>
+              <h5>Country</h5>
+              <p>{{item?.permanent_Address.country}}</p>
+            </div>
+          </div>
+        </div>
+      <button class="close" (click)="closePopup()">Close</button>
+    </div>
+  </div>

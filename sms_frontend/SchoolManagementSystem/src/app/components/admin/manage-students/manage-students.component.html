@@ -1,0 +1,28 @@
+<div class="student_container container">
+    <div class="manage_heading_section">
+        <div class="left">All students</div>
+        <div class="right" *ngIf = "role === 'admin' || role === 'teacher'">
+            <button type="button" class="btn add_student_btn" (click)="openEdit()">
+                Add student
+                <span class="add_icon">
+                    <mat-icon>add</mat-icon>
+                </span>
+            </button>
+            <select id="options" class="btn dropdown" (change)="selectClass($event)">
+            <option >Select class</option>
+            <option *ngFor="let class of availableClasses" [value]="class?.class_id">{{ class?.class_name }}</option>
+            </select>
+        </div>
+    </div>
+    <div class="all_student_container">
+        <div class="students" *ngFor="let student of allStudents">
+            <app-student-card [item]="student"></app-student-card>
+        </div>
+        <div class="pagination_button_container">
+            <button class="prev_btn" (click)="prevClick()" [disabled]="pageNo === 0"><mat-icon>arrow_left</mat-icon>prev</button>
+            <button class="next_btn" (click)="nextClick()" [disabled]="allStudents?.length === 0 || allStudents?.length < 10">next<mat-icon>arrow_right</mat-icon></button>
+        </div>
+    </div>
+</div>
+
+<app-student-create-update  [studentDetail]="" [opType]="opType" *ngIf="edit" (close)="closeEdit()"></app-student-create-update>

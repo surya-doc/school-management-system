@@ -1,0 +1,94 @@
+.class_card{
+    background-color: #e9e9e9;
+    margin: 0px 20px;
+    display: flex;
+    align-items: center;
+    border-left: 6px solid #4b208c;
+    /* border-radius: 4px 0px 0px 4px; */
+    padding: 4px 20px;
+    justify-content: space-between;
+    transition: transform 0.3s ease-in-out;
+
+}
+
+.class_card:hover{
+    /* transform: scale(1.06); */
+    border-radius: 6px;
+}
+
+.id_section{
+    display: flex;
+    justify-content: baseline;
+    align-items: center;
+    margin: 0;
+}
+
+p{
+    margin: 0px;
+}
+
+.id_text{
+    font-weight: bolder;
+}
+
+.id{
+    font-weight: bolder;
+    font-size: 1.4rem;
+}
+
+.qualification{
+    font-size: 1.4rem;
+    font-weight: 600;
+    color: #4B208C;
+}
+
+.class_teacher{
+    font-style: italic;
+    font-size: 0.8rem;
+}
+
+.edit_option{
+    color: #919191;
+}
+
+.add{
+    max-width: 20px;
+    max-height: 20px;
+    padding: 4px;
+    font-size: 1.1rem;
+    margin-bottom: 4px;
+}
+
+.add_class_teacher{
+    cursor: pointer;
+}
+
+.popup{
+    position: fixed;
+    background-color: rgb(122,133,153, 0.4);
+    z-index: 999;
+    width: 100vw;
+    height: 100vh;
+    top: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    left: 0;
+}
+
+.popup-content{
+    background-color: #FFF;
+    min-width: 60vw;
+    min-height: 60vh;
+    max-width: 60vw;
+    max-height: 60vh;
+    padding: 40px;
+    overflow-y: scroll;
+    color: #1b174d;
+    position: relative;
+}
+
+.inner_components{
+    width: 80%;
+    margin: 0 auto;
+}

@@ -1,0 +1,30 @@
+<div class="create_notice popup">
+    <div class="notice_create_form_content popup-content">
+        <div class="close_op"><mat-icon (click)="closeEdit()">close</mat-icon></div>
+        <div class="inner_components">
+            <h1>Create Notice</h1>
+            <form [formGroup]="noticeCreateForm" (ngSubmit)="createNotice()">
+                <h5>Notice heading</h5>
+                <input class="input" type="text" formControlName="heading">
+                <span class="error_message" *ngIf="noticeCreateForm.get('heading') && noticeCreateForm.get('heading')?.touched && noticeCreateForm.get('heading')?.invalid">This field is required</span>
+                <br> <br>
+                <h5>Notice description</h5>
+                <textarea class="input" name="" id="" cols="30" rows="5" formControlName="description"></textarea>
+                <span class="error_message" *ngIf="noticeCreateForm.get('description') && noticeCreateForm.get('description')?.touched && noticeCreateForm.get('description')?.invalid">This field is required</span>
+                <br> <br>
+                <h5>Notice start date</h5>
+                <input class="input" type="date" formControlName="startDate">
+                <span class="error_message" *ngIf="noticeCreateForm.get('startDate') && noticeCreateForm.get('startDate')?.touched && noticeCreateForm.get('startDate')?.invalid">Please enter a valid input</span>
+                <br> <br>
+                <h5>Notice expiry date</h5>
+                <input class="input" type="date" formControlName="expiryDate">
+                <span class="error_message" *ngIf="noticeCreateForm.get('expiryDate') && noticeCreateForm.get('expiryDate')?.touched && noticeCreateForm.get('expiryDate')?.invalid">Please enter a valid input</span>
+                <br> <br>
+                <h5>Upload image (optional)</h5>
+                <input type="file" formControlName="image" (change)="onFileSelected($event)">
+                <br> <br>
+                <button [disabled]="noticeCreateForm.invalid" class="submit btn">Submit</button>
+            </form>
+        </div>
+    </div>
+</div>

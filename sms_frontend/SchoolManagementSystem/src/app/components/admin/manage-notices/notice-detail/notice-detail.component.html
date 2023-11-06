@@ -1,0 +1,27 @@
+<div class="popup">
+  <div class="popup-content shadow">
+    <div class="close_op"><mat-icon (click)="closePopup()">close</mat-icon></div>
+    <div class="notice_heading">
+      <h1>{{ item?.heading }}</h1>
+    </div>
+    <div class="notice_display" *ngIf="imageBase64 !== null">
+      <img class="notice_detail_img" [src]="'data:image/png;base64,' + imageBase64" alt="Image">
+    </div>
+    <div class="notice_description">
+      <h5>Description</h5>
+      <p>{{ item?.description }}</p>
+    </div>
+    <div class="start_date">
+      <h4>Start date</h4>
+      <p>{{ item?.startDate | date : "d MMMM" }}</p>
+    </div>
+    <div class="end_date">
+      <h4>Expiry date</h4>
+      <p>{{ item?.expiryDate | date : "d MMMM" }}</p>
+    </div>
+    <div [ngClass]="{'active': item?.status, 'in_active': !item?.status}">
+      {{item?.status ? 'active' : 'inActive'}}
+    </div>
+    <button class="close" (click)="closePopup()">Close</button>
+  </div>
+</div>

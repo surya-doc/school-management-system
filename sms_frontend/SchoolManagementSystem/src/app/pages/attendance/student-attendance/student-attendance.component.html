@@ -1,0 +1,11 @@
+<div class="student_container container">
+    <div class="manage_heading_section">
+        <div class="left">All students</div>
+    </div>
+    <div class="all_student_container">
+        <div class="students" *ngFor="let student of students">
+            <app-attendance-card [item]="student"></app-attendance-card>
+            <!-- <app-student-card [item]="student"></app-student-card> -->
+        </div>
+    </div>
+</div>

@@ -1,0 +1,19 @@
+.home-container{
+    display: flex;
+    /* height: 83vh; */
+    justify-content: center;
+    align-items: center;
+}
+.home-container div{
+    padding: 20px;
+}
+.text{
+    font-size: large;
+    text-align: center;
+}
+
+@media(max-width: 1190px){
+    .home-container{
+        flex-direction: column;
+    }
+}

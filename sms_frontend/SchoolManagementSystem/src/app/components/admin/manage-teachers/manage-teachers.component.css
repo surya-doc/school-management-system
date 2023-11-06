@@ -1,0 +1,91 @@
+.teacher_container{
+    padding: 20px 0px;
+}
+
+.manage_heading_section{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #eae6f5;
+    border-bottom: 2px solid #4b208c;
+    padding: 10px 20px;
+}
+
+.left{
+    color: #4B208C;
+    font-size: 1.4rem;
+    font-weight: 600;
+}
+
+.right{
+    display: flex;
+}
+
+.right button{
+    background-color: #4B208C;
+    border: none;
+    color: #FFF;
+    padding: 8px 10px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-weight: 500;
+}
+
+.add_icon{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-left: 10px;
+}
+
+.teachers{
+    padding: 20px 0px;
+}
+
+.all_teacher_container{
+    margin-bottom: 180px;
+}
+
+.sort_teacher_btn{
+    margin: 0px 0px 0px 16px;
+}
+
+.pagination_button_container{
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.prev_btn{
+    background-color: #505F79;
+    margin: 0px 20px;
+    padding: 6px 18px;
+    color: #FFF;
+    border: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.next_btn{
+    background-color: #505F79;
+    margin: 0px 20px;
+    padding: 6px 18px;
+    color: #FFF;
+    border: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.prev_btn:disabled{
+    background-color: #E6E6E6;
+    color: #ACAAAA;
+}
+
+.next_btn:disabled{
+    background-color: #E6E6E6;
+    color: #ACAAAA;
+}

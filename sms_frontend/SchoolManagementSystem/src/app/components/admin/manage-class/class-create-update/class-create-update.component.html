@@ -1,0 +1,40 @@
+<div class="create_notice popup">
+    <div class="notice_create_form_content popup-content">
+        <div class="close_op"><mat-icon (click)="closeEdit()">close</mat-icon></div>
+        <div class="inner_components">
+            <h1>Create a class</h1>
+            <form [formGroup]="classCreateForm" (ngSubmit)="createClass()">
+                <h5>Class Id</h5>
+                <input class="input" type="number" formControlName="class_id">
+                <span class="error_message"
+                    *ngIf="classCreateForm.get('id') && classCreateForm.get('id')?.touched && classCreateForm.get('id')?.invalid">This
+                    field is required</span>
+                <br> <br>
+                <h5>Class name</h5>
+                <input class="input" type="text" formControlName="class_name">
+                <span class="error_message"
+                    *ngIf="classCreateForm.get('class') && classCreateForm.get('class')?.touched && classCreateForm.get('class')?.invalid">This
+                    field is required</span>
+                <br> <br>
+                <h5>Minimum qualification needed</h5>
+                <select class="input" formControlName="min_qualification" (change)="getTeachers($event)">
+                    <option value="">Select qualification</option>
+                    <option value="B.Sc">Bsc</option>
+                    <option value="M.Sc">Msc</option>
+                    <option value="PhD">PhD</option>
+                </select>
+                <br> <br>
+                <h5>Assign class teacher</h5>
+                <select class="input" formControlName="teacher_id">
+                    <option value="">Select teacher</option>
+                    <option *ngFor="let teacher of teachersList" [value]="teacher?.user_id">{{teacher?.full_name}} &lpar; {{teacher?.qualification}} &rpar;</option>
+                </select>
+                <span class="error_message"
+                    *ngIf="classCreateForm.get('max_qualification') && classCreateForm.get('max_qualification')?.touched && classCreateForm.get('max_qualification')?.invalid">Please
+                    select a valid qualification</span>
+                <br> <br>
+                <button [disabled]="classCreateForm.invalid" class="submit btn">Submit</button>
+            </form>
+        </div>
+    </div>
+</div>

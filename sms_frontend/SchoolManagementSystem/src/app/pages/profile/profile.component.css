@@ -1,0 +1,395 @@
+/* .profile-container{
+    padding: 3rem 10rem;
+}
+
+.profile-header{
+    width: 100%;
+    height: 20vh;
+    background: linear-gradient(to right, #333, #ccc);
+    display: flex;
+    justify-content: space-around;
+    position: relative;
+}
+
+.image-container{
+    border-radius: 50%;
+    width: 14rem;
+    height: 14rem;
+    margin-top: -2rem;
+    margin-left: 5rem;
+}
+
+.image-container img{
+    height: 100%;
+    width: 100%;
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+.profile-title{
+    width:55%;
+    height: 100%;
+    align-items: center;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+}
+
+h1{
+    font-size: 60px;
+}
+
+.role{
+    text-decoration: underline;
+    color: #190734;
+    font-size: 30px;
+}
+
+.details-1{
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    width: 100%;
+    height: 8vh;
+    font-size: 18px;
+}
+
+.details-2{
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    width: 98%;
+    height: 18vh;
+    font-size: 18px;
+}
+
+.details-container-2{
+    width: 100%;
+    height: 16vh;
+    justify-content: justify;
+    margin: 1rem;
+    padding: 1rem;
+    border: 1px solid transparent;
+    background: linear-gradient(to right, #ffffff, #ccc);
+    border-radius: 5px;
+    box-shadow: 0px 4px 8px lightgray;
+}
+
+.details-container:hover, .details-container-2:hover{
+    transform: scale(1.04);
+}
+
+.details-container{
+    width: 100%;
+    height: 8vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 1px solid transparent;
+    background: linear-gradient(to right, #ccc, #ffffff);
+    border-radius: 5px;
+    box-shadow: 0px 4px 8px lightgray;
+}
+
+.address-details{
+    margin-top: 10px;
+}
+
+.hobby-names{
+    width:10%;
+    height: 60%;
+    border: 1px solid transparent;
+    margin: 0px 1rem;
+    border-radius: 30%;
+    background-color: #5c5959;
+    color: whitesmoke;
+    font-weight: 500;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+} */
+
+.prof{
+    margin-bottom: 10vh; 
+}
+
+.profile_container{
+    /* background-color: #D390EE; */
+    /* background-color: #F6F6F6; */
+    background-image: linear-gradient(to right bottom, #53116F, #5C227E, #66308E, #6F3E9D, #784CAD, #8452B3, #9057BA, #9C5DC0, #AC5DBD, #BB5CBA, #C95CB6, #D65DB1);
+}
+.image-container{
+    padding: 6px;
+    background-color: #FFF;
+    border-radius: 50%;
+    position: relative;
+    top: 11vh;
+}
+.image-container img{
+    width: 13rem;
+    height: 13rem;
+    border-radius: 50%;
+}
+.profile_top{
+    display: flex;
+}
+.profile_top_right{
+    padding-left: 2rem;
+    position: relative;
+    padding-bottom: 20px;
+}
+.profile-title{
+    position: absolute;
+    bottom: 10px;
+    width: 40vw;
+    color: #FFF;
+    letter-spacing: 1px;
+}
+.line{
+    min-width: 20px;
+    max-width: 140px;
+    min-height: 1px;
+    background-color: #FFF;
+    position: relative;
+    top: -10px;
+}
+.name{
+    font-size: 2rem;
+    font-weight: 500;
+}
+.role{
+    display: flex;
+    align-items: center;
+    font-style: italic;
+}
+.status_icon{
+    margin-right: 10px;
+    padding: 2px;
+    border: 1px solid #FFF;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+}
+.profile_bottom{
+    display: flex;
+    align-items: baseline;
+}
+.profile_details_container{
+    margin-top: 14vh;
+    background-color: #F6F6F6;
+    display: flex;
+    padding: 20px 0px 10vh 0px;
+}
+.profile_bottom_left{
+    background-color: #FFF;
+    width: 40%;
+    padding: 20px 0px;
+    border-radius: 4px;
+    margin-right: 40px;
+}
+.basic_details{
+    padding: 16px 30px;
+    display: flex;
+    align-items: center;
+}
+.hobby{
+    padding: 4px 30px 16px 30px;
+    display: flex;
+    align-items: center;
+    font-size: 0.8rem;
+    flex-wrap: wrap;
+    max-width: 100%;
+    justify-content: flex-start;
+}
+.divider{
+    min-width: 90%;
+    max-width: 90%;
+    min-height: 1px;
+    max-height: 1px;
+    background-color: #D8D6ED;
+    margin: 0 auto;
+}
+.icon{
+    margin-right: 10px;
+}
+.single_hobby{
+    /* margin-right: 20px; */
+    background-color: #D390EE;
+    padding: 4px 16px;
+    border-radius: 20px;
+    letter-spacing: 1px;
+    margin: 10px 20px 10px 0px;
+    /* flex: 0 0 calc(33.33% - 10px); */
+    text-align: center;
+    box-sizing: border-box;
+}
+.profile_bottom_right{
+    margin-left: 40px;
+    width: 56%;
+}
+.address{
+    background-color: #FFF;
+}
+.address_type{
+    padding: 40px 0px 0px 30px;
+    display: flex;
+    font-size: larger;
+}
+.address_info{
+    padding-right: 10px;
+    font-weight: 600;
+    letter-spacing: 1px;
+}
+.address{
+    margin-bottom: 20px;
+    border-radius: 4px;
+}
+.classes{
+    padding: 4px 30px 16px 30px;
+    display: flex;
+    align-items: center;
+    font-size: 0.8rem;
+    flex-wrap: wrap;
+    max-width: 100%;
+    justify-content: flex-start;
+}
+.subjects{
+    padding: 4px 30px 16px 30px;
+    display: flex;
+    align-items: center;
+    font-size: 0.8rem;
+    flex-wrap: wrap;
+    max-width: 100%;
+    justify-content: flex-start;
+}
+.details_name{
+    margin: 0px;
+    padding: 10px 0px 0px 30px;
+}
+.add_hobby{
+    margin-left: 30px;
+    outline: none;
+}
+.add_hobby input:focus{
+    outline: none;
+}
+.submit{
+    background-color: #505F79;
+    border: 2px solid #505F79;
+    margin-left: 10px;
+    color: #FFF;
+    font-size: 0.8rem;
+}
+.dob_certificate{
+    margin-top: 20px;
+}
+.dob_certificate_img_small{
+    width: 4rem;
+    height: 4rem;
+    margin: 10px 0px 0px 30px;
+}
+.dob_form{
+    margin-top: 20px;
+}
+.background{
+    background-color: #D8D6ED;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    font-weight: 600;
+    letter-spacing: 1px;
+}
+.popup{
+    position: fixed;
+    background-color: rgb(122,133,153, 0.4);
+    z-index: 999;
+    width: 100vw;
+    height: 100vh;
+    top: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    left: 0;
+}
+.popup-content{
+    background-color: #FFF;
+    min-width: 60vw;
+    min-height: 60vh;
+    max-width: 60vw;
+    max-height: 60vh;
+    padding: 40px;
+    overflow-y: scroll;
+    color: #1B174D;
+    position: relative;
+}
+.dob_certificate_img_large{
+    width: 100%;
+    height: auto;
+}
+.update_password{
+    margin-top: 20px;
+}
+.change_password_detail{
+    margin-bottom: 20px;
+}
+.popup{
+    position: fixed;
+    background-color: rgb(122,133,153, 0.4);
+    z-index: 999;
+    width: 100vw;
+    height: 100vh;
+    top: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    left: 0;
+}
+.popup-content{
+    background-color: #FFF;
+    min-width: 60vw;
+    min-height: 60vh;
+    max-width: 60vw;
+    max-height: 60vh;
+    padding: 40px;
+    overflow-y: scroll;
+    color: #1B174D;
+    position: relative;
+}
+.update_password_option{
+    margin-top: 30px;
+}
+.update_password_option p{
+    margin-left: 30px;
+    margin-top: 10px;
+    color: #1B174D;
+    cursor: pointer;
+}
+.update_password input{
+    margin: 10px;
+}
+.submit_btn{
+    background-color: #53116F;
+    border: none;
+    color: #FFF;
+    font-size: 0.9rem;
+    border-radius: 2px;
+    padding: 8px 10px;
+    cursor: pointer;
+}
+
+.edit_op{
+    position: absolute;
+    top: 20px;
+    right: 10px;
+    background-color: #f6f6f6;
+    width: 28px;
+    height: 28px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    padding: 2px;
+    border: 2px solid #E6E6E6;
+    color: #797979;
+    box-shadow: 0px 0px 4px 6px rgba(0, 0, 0, 0.2);
+}

@@ -1,0 +1,35 @@
+<div class="container">
+    <div class="record-container">
+        <div class="manage_heading_section">
+            <div class="left">Attendance For Class <strong>{{className}}</strong>, For Month <strong>{{month}}</strong></div>
+            <div class="right">
+                <select id="options" class="btn dropdown" (change)="onSelectClass($event)">
+                    <option>Class</option>
+                    <option *ngFor="let option of classOptions" [value]="option?.class_id">{{ option?.class_name }}</option>
+                  </select>
+                  <select id="options" class="btn dropdown" (change)="onSelectMonth($event)">
+                    <option>Month</option>
+                    <option *ngFor="let option of monthOptions" [value]="option">{{ option }}</option>
+                  </select>
+                  <button class="btn btn-primary mx-2" style="background-color: #4b208c; border: none;" (click)="OnSubmit()">Get attendance</button>
+            </div>
+        </div>
+        <table class="table table-striped">
+            <thead>
+                <tr>
+                    <th *ngFor="let column of displayedColumns">{{ column }}</th>
+                  </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let row of attendanceData">
+                    <td>{{row.user_id}}</td>
+                    <td>{{row.student_id}}</td>
+                    <td>{{row.name}}</td>
+                    <td>{{row.present_days}}</td>
+                    <td>{{row.total_days}}</td>
+                    <td>{{(row.present_days/row.total_days*100)}}%</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>

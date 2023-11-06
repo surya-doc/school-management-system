@@ -1,0 +1,40 @@
+.student_container{
+    padding: 20px 0px;
+}
+
+.manage_heading_section{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #eae6f5;
+    border-bottom: 2px solid #4b208c;
+    padding: 10px 20px;
+}
+
+.left{
+    color: #4B208C;
+    font-size: 1.4rem;
+    font-weight: 600;
+}
+
+.students{
+    padding: 20px 0px;
+}
+
+.all_student_container{
+    overflow-y: scroll;
+    max-height: 80vh;
+}
+
+.all_student_container::-webkit-scrollbar {
+    display: none;
+}
+
+.all_student_container{
+    -ms-overflow-style: none;  /* IE and Edge */
+    scrollbar-width: none;  /* Firefox */
+  }
+
+.sort_student_btn{
+    margin: 0px 0px 0px 16px;
+}

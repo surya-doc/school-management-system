@@ -1,0 +1,95 @@
+.popup{
+    position: fixed;
+    background-color: rgb(122,133,153, 0.4);
+    z-index: 999;
+    width: 100vw;
+    height: 100vh;
+    top: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    left: 0;
+}
+
+.popup-content{
+    background-color: #FFF;
+    min-width: 60vw;
+    min-height: 60vh;
+    max-width: 60vw;
+    max-height: 60vh;
+    padding: 40px;
+    overflow-y: scroll;
+    color: #1b174d;
+    position: relative;
+}
+
+.inner_components{
+    width: 80%;
+    margin: 0 auto;
+}
+
+.input{
+    outline: none;
+    border: 1px solid #e6e6e6;
+    padding: 2px 10px;
+    width: 100%;
+}
+
+.input:focus{
+    outline: 1px solid #4b208c;
+}
+
+input[image]{
+    border: none;
+}
+
+h5{
+    font-size: 1rem;
+    font-weight: bold;
+}
+
+.submit{
+    background-color: #4b208c;
+    color: #FFF;
+}
+
+
+.close_op{
+    position: absolute;
+    top: 0;
+    right: 0;
+    cursor: pointer;
+    padding: 10px;
+}
+
+.error_message{
+    color: red;
+    font-size: 0.7rem;
+}
+
+.address_detail_form{
+    display: flex;
+    justify-content: space-between;
+}
+
+.address_detail_form h1{
+    font-size: 1.4rem;
+    background-color: #505F79;
+    color: #FFF;
+    padding: 6px 10px;
+    margin-bottom: 16px;
+}
+
+.current_detail{
+    width: 50%;
+    margin-right: 40px;
+}
+
+.permanent_detail{
+    width: 50%;
+}
+
+.update_id_container{
+    padding: 6px 10px;
+    border: 1px solid #e6e6e6;
+}

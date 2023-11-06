@@ -1,0 +1,129 @@
+.notice-container{
+    justify-content: center;
+    max-height: 60vh;
+    overflow-y: scroll;
+    margin-bottom: 80px;
+    margin: 0 auto;
+    max-width: 40vw;
+    padding: 20px 0;
+    background-color: #f0f0f0;
+}
+
+.notice-container::-webkit-scrollbar{
+    display: none;
+}
+
+.card{
+    width:80%;
+    height: 5.7rem;
+    background-color: #ffffff;
+    border-radius: 5px;
+    padding: 10px 10px;
+    margin: 10px auto;
+    box-shadow: 0px 6px 12px rgb(199, 199, 199);
+}
+
+.notices{
+    display: flex;
+    flex-direction: column;
+    
+}
+
+.header{
+    margin: 0 auto;
+    width:95%;
+    height:40%;
+    margin-bottom: 1px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.body{
+    margin: 0 auto;
+    width:95%;
+    height:60%;
+}
+
+.desc
+{
+    padding: 60px 80px;
+    margin: 0 auto;
+    background-color: rgb(255, 255, 255);
+    justify-content: center;
+}
+
+.design{
+    border-radius: 79% 21% 23% 77% / 68% 54% 46% 32%;
+    min-width: 100px;
+    min-height: 100px;
+    position: absolute;
+    background-color: #bbabe6;
+    top: -15px;
+}
+
+h2{
+    position: absolute;
+    padding-left: 50px;
+}
+
+.notice-title{
+    position: relative;
+    padding-left: 60px;
+    height: 200px;
+    width: 200px;
+    margin-bottom: 10px;
+}
+
+.notice-header{
+    text-decoration: underline;
+    font-size: medium;
+    font-weight: bold;
+}
+
+.notice-issue-date{
+    font-size: 11px;
+    text-align: center;
+    font-style: italic;
+    font-weight: bold;
+}
+
+.notice-description{
+    font-size: 11px;
+    text-align:left;
+}
+
+.card:hover{
+    transform: scale(1.05);
+}
+
+@media(max-width: 1100px){
+    .notice-container{
+        max-width: 80vw;
+    }
+}
+
+@media(max-width: 770px){
+    .notice-title{
+        margin: 0 auto;
+        height: 160px;
+    }
+
+    h2{
+        padding-left: 30px;
+    }
+
+    .desc{
+        padding: 20px;
+    }
+}
+
+@media(max-width: 500px){
+    .notice-container{
+        max-width: 95vw;
+    }
+
+    .card{
+        width: 90%;
+    }
+}

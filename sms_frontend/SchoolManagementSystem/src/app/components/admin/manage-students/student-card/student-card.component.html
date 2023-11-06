@@ -1,0 +1,22 @@
+<div class="student_card container row">
+    <div class="student_profile_pic col-lg-1">
+        <img *ngIf="item?.profile_pic" [src]="'data:image/png;base64,' + item?.profile_pic" alt="">
+        <img *ngIf="!item?.profile_pic" src="https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460_1280.png" alt="g">
+    </div>
+    <div class="student_name col-lg-2">{{item?.full_name}}</div>
+    <div class="student_email col-lg-3">{{item?.email}}</div>
+    <div class="student_ph_no col-lg-3">{{item?.ph_number | phonenoFormatter}}</div>
+    <div class="student_gender col-lg-1">{{item?.gender}}</div>
+    <div class="detail_view col-lg-1">
+        <button class="btn view_detail_btn" (click)="openPopup()">View</button>
+    </div>
+    <div class="student_edit_delete col-lg-1" *ngIf = "role==='admin' || role==='teacher'">
+        <div class="edit_option" (click)="openEdit()"><mat-icon class="edit">edit</mat-icon></div>
+        <div class="delete_option" (click)="deleteStudent()">
+            <mat-icon class="delete">delete_outline</mat-icon>
+        </div>
+    </div>
+</div>
+
+<app-student-details [item]="studentDetail" *ngIf="isPopupOpen" (close)="closePopup()"></app-student-details>
+<app-student-create-update  [studentDetail]="studentDetail" [opType]="opType" *ngIf="edit && studentDetail" (close)="closeEdit()"></app-student-create-update>

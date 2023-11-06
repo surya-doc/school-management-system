@@ -1,0 +1,37 @@
+<div class="login-container">
+    <div class="container login-box">
+        <div class="row" style="height: 100%; width: 100%; padding: 10px 10px;">
+            <div class="col-md-7"></div>
+            <div class="col-md-5 login-form">
+                <div class="wrapper">
+                    <div class="heading">
+                        <h2>Welcome!</h2>
+                        <p>Sign In to your account</p>
+                    </div>
+                    <form [formGroup]="reactiveForm" (ngSubmit)="onSubmit()">
+                        <div class="input-group" form>
+                            <input type="text" id="username" class="input-field" placeholder="Username" formControlName = "email">
+                        </div>
+                        
+                        <div class="input-group">
+                            <input type="password" id="password" class="input-field" placeholder="Password" formControlName = "password">
+                        </div>
+                        
+                        <div class="input-group row">
+                        
+                            <div class="">
+                                <a routerLink="/reset-email">Forgot password?</a> 
+                            </div>
+                            
+                        </div>
+                        
+                        
+                        <div class="input-group">
+                            <button [disabled]="!reactiveForm.valid">Login <i class="fa-solid fa-arrow-right"></i></button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

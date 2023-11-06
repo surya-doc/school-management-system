@@ -1,0 +1,116 @@
+.card {
+    height: 27rem;
+    width: 16rem;
+    margin: 1rem 1rem;
+    border-radius: 1rem;
+    text-align: center;
+    background-color: white;
+    box-shadow: 1px 4px 16px rgba(0, 0, 0, 0.2);
+    transition: transform 0.2s;
+    border-top: 10px solid transparent;
+}
+
+.cards{
+    padding: 3rem;
+}
+
+.card-image{
+    margin-top: 2rem;
+}
+
+img{
+    border-radius: 1rem;
+}
+
+.card-title {
+    font-size: 1.4rem;
+    font-weight: bold;
+  }
+  
+.card-teacher {
+    font-style: italic;
+    color: #f38d8d;
+}
+
+
+.card-students {
+    font-weight: bold;
+    color: #333;
+}
+
+drag-scroll {
+    height: 30rem;
+    width: 100%;
+}
+
+/* h2 {
+    line-height: 110%;
+    padding-right: 15px;
+    position: relative;
+    left: 50px;
+    display: table;
+    font-weight: 600;
+}
+  
+h2:before{
+    content: '';
+    width: 110px;
+    height: 111px;
+    position:absolute;
+    top: -15px;
+    left:-115px;
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-image: url(../../assets/school_logo.png);
+} */
+
+*, ::after, ::before {
+    box-sizing: border-box;
+}
+
+.card:hover{
+    transform: scale(1.04);
+    box-shadow: 1px 4px 16px rgba(0, 0, 0, 0.4);
+    border-top: 10px solid #190734;
+    transition: opacity 0.5s ease-in-out; 
+}
+ 
+.desc
+{
+    padding: 40px 60px;
+    background-color: rgb(240, 240, 240);
+}
+
+
+.design{
+    border-radius: 79% 21% 23% 77% / 68% 54% 46% 32%;
+    min-width: 100px;
+    min-height: 100px;
+    position: absolute;
+    background-color: #bbabe6;
+    top: -15px;
+}
+
+h2, .class-title{
+    position: relative;
+}
+
+h2{
+    padding-left: 50px;
+}
+
+@media(max-width: 770px){
+    .class_title{
+        margin: 0 auto;
+    }
+
+    h2{
+        height: 100px;
+    }
+}
+
+@media(max-width: 500px){
+    .desc{
+        padding: 20px;
+    }
+}

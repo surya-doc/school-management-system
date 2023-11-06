@@ -1,0 +1,38 @@
+<div class="class_card">
+    <div class="left">
+        <div class="id_section">
+            <p class="id_text">Class id: </p>
+            <p class="id">{{item?.class_id}}</p>
+        </div>
+        <div class="class_name">
+            <p>{{item?.class_name}}</p>
+        </div>
+    </div>
+    <div class="right">
+        <div class="qualification">
+            {{item?.min_qualification}}
+        </div>
+        <div class="class_teacher" *ngIf="item?.teacher_name">
+            by- {{item?.teacher_name}}
+        </div>
+        <div class="add_class_teacher" *ngIf="!item?.teacher_name" (click)="openDiv(item?.min_qualification)">
+            <span class="add" >+</span> Assign class teacher
+        </div>
+        <div class="create_notice popup" *ngIf="open === true">
+            <div class="notice_create_form_content popup-content">
+                <div class="close_op"><mat-icon (click)="closeDiv()">close</mat-icon></div>
+                <div class="teacher_list">
+                    <h5>Assign class teacher</h5>
+                    <select class="input" (change)="assignClassTeacher(item?.class_id, $event)">
+                        <option value="">Select teacher</option>
+                        <option *ngFor="let teacher of teachers" [value]="teacher?.user_id">{{teacher?.full_name}} &lpar; {{teacher?.qualification}} &rpar;</option>
+                    </select>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="edit_option"  (click)="openEdit()"><mat-icon class="edit">edit</mat-icon></div>
+</div>
+
+
+<app-class-create-update  [item]="item" [opType]="opType" *ngIf="edit" (close)="closeEdit()"></app-class-create-update>

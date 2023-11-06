@@ -1,0 +1,44 @@
+
+<div class="desc">
+    <div class="container">
+        <div class="row align-items-center">
+            <div class="col-md-4 col-sm-12 class-title">
+                <div class="design">
+                </div>
+                <h2>
+                    <strong>Argus</strong>
+                    <br>&nbsp;&nbsp;Classes
+                </h2>
+            </div>
+            <div class="col-md-8 col-sm-12" style="text-align: center;">
+                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Iusto dignissimos ipsam totam, ipsum aliquam quisquam excepturi fugiat consectetur, laboriosam dolor dicta ad itaque! Culpa, recusandae cum possimus id repellendus vel.
+                Nemo fuga reprehenderit iure rerum facilis illo necessitatibus dolorum labore repellat eaque et iste odit temporibus ab nisi autem commodi molestiae explicabo sit deleniti, animi iusto aliquam tempore. Voluptate, et.
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="container px-0 cards">
+    <drag-scroll #nav [scroll-x-wheel-enabled]="true">
+        <div *ngFor="let p of productList; let i = index" drag-scroll-item>
+        <div class="card">
+            <div class="card-image">
+                <img [src] = images[i%3] width="200" height="200" class="d-inline-block align-center" alt="">
+            </div>
+            <div class="card-body">
+                <p class="card-title">{{p?.class_name}}</p>
+                <div *ngIf="p?.teacher_name">
+                    taught by -
+                    <p class="card-teacher">{{p?.teacher_name}}</p>
+                </div>
+                <div *ngIf="!p?.teacher_name">
+                    taught by -
+                    <p style="color: #a3a3a3; font-style: italic;">not assigned</p>
+                </div>
+                with
+                <p class="card-students">{{p?.total_students}} Students</p>
+            </div>
+        </div>
+        </div>
+    </drag-scroll>
+  </div>

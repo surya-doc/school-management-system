@@ -1,0 +1,267 @@
+<!-- <div class="profile-container">
+    <div class="container">
+        <div class="row pb-4">
+            <div class="profile-header col-md-12">
+                <div class="image-container">
+                    <img src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?auto=format&fit=crop&q=80&w=1587&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D">
+                </div>
+                <div class="profile-title">
+                    <div class="title-body">
+                        <div class="role"><h2><strong>STUDENT&nbsp;:&nbsp;1</strong></h2></div>
+                        <h1>Aria Grace Thompson</h1>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="row mt-3 mb-3" >
+            <div class="col-md-4">
+                <div class="basic-details">
+                    <div class="row mt-3 mb-3" >
+                        <div class="details-1">
+                            <div class="col-md-12">
+                                <div class="details-container">
+                                    <div class="email">
+                                        <strong>Email&nbsp;:-</strong>&emsp;dummy@tummy.com
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row mt-3 mb-3">
+                        <div class="details-1">
+                            <div class="col-md-12">
+                                <div class="details-container">
+                                    <div class="email">
+                                        <strong>Phone Number&nbsp;:-</strong>&emsp;9876543210
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row mt-3 mb-3">
+                        <div class="details-1">
+                            <div class="col-md-12">
+                                <div class="details-container">
+                                    <div class="email">
+                                        <strong>Gender&nbsp;:-</strong>&emsp;Female
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row mt-3 mb-3">
+                        <div class="details-1">
+                            <div class="col-md-12">
+                                <div class="details-container">
+                                    <div class="email">
+                                        <strong>DOB&nbsp;:-</strong>&emsp;1st Sept 2001 
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-8">
+                <div class="address-details">
+                    <div class="row mt-3 mb-3" >
+                        <div class="details-2">
+                            <div class="col-md-12">
+                                <div class="details-container-2">
+                                    <div class="email">
+                                        <strong>Current Address&nbsp;:-</strong>&emsp;<br>
+                                        <div class="address-details">
+                                            Lorem ipsum dolor sit amet consectetur adipisicing elit. Inventore, molestiae natus? Quis, provident qui dolores vitae obcaecati distinctio dolorem temporibus, facilis quae sapiente placeat totam vel aliquid quia, voluptate reprehenderit.
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="address-details">
+                    <div class="row mt-3 mb-3" >
+                        <div class="details-2">
+                            <div class="col-md-12">
+                                <div class="details-container-2">
+                                    <div class="email">
+                                        <strong>Permanent Address&nbsp;:-</strong>&emsp;<br>
+                                        <div class="address-details">
+                                            Lorem ipsum dolor sit amet consectetur adipisicing elit. Inventore, molestiae natus? Quis, provident qui dolores vitae obcaecati distinctio dolorem temporibus, facilis quae sapiente placeat totam vel aliquid quia, voluptate reprehenderit.
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-12">
+                <div class="details-container">
+                    <strong>Hobbies&nbsp;:-</strong>&emsp;
+                    <div class="hobby-names">Dummy</div>
+                    <div class="hobby-names">Dummy</div>
+                    <div class="hobby-names">Dummy</div>
+                    <div class="hobby-names">Dummy</div>
+                </div>
+            </div>
+        </div>
+        
+    </div>
+</div> -->
+<div class="prof">
+    <div class="profile_container">
+        <div class="container">
+            <div class="profile_top">
+                <div class="profile_top_left">
+                    <div class="image-container shadow">
+                        <img
+                            [src]="'data:image/png;base64,' + profileDetails?.profile_pic">
+                            <div class="edit_op" (click)="openImageEdit()"><mat-icon class="edit">edit</mat-icon></div>
+                            <div class="create_notice popup" *ngIf="addImage === true">
+                                <div class="notice_create_form_content popup-content">
+                                    <div class="close_op"><mat-icon (click)="closeImageEdit()">close</mat-icon></div>
+                                    <form (submit)="updateProfilePic()">
+                                        <input class="input_img" accept="image/*" type="file" (change)="onFileSelected($event)">
+                                        <button class="submit" type="submit">Submit</button>
+                                    </form>
+                                </div>
+                            </div>
+                    </div>
+                </div>
+                <div class="profile_top_right">
+                    <div class="profile-title">
+                        <div class="title-body">
+                            <div class="name">{{profileDetails?.fullName}}</div>
+                            <div class="line"></div>
+                            <div class="role"> <span class="status_icon"><mat-icon>perm_identity</mat-icon></span> {{role}}
+                            </div>
+                            <div class="location"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <div class="profile_details_container">
+        <div class="profile_bottom container">
+            <div class="profile_bottom_left shadow">
+                <div class="user_id basic_details"><mat-icon class="icon">perm_identity</mat-icon>user_id: {{profileDetails?.id}}</div>
+                <div class="divider"></div>
+                <div class="email basic_details"><mat-icon class="icon">alternate_email</mat-icon>{{profileDetails?.email}}</div>
+                <div class="divider"></div>
+                <div class="ph_number basic_details"><mat-icon class="icon"> phone</mat-icon>{{profileDetails?.phoneNumber}}</div>
+                <div class="divider"></div>
+                <div class="dob basic_details"><mat-icon class="icon">cake</mat-icon>{{profileDetails?.dob | date}}</div>
+                <div class="divider"></div>
+                <div class="gender basic_details">{{profileDetails?.gender}}</div>
+                <div *ngIf="role==='student'">
+                    <!-- <div class="divider"></div> -->
+                    <p class="details_name background">Hobby</p>
+                    <div class="hobby basic-details">
+                        <div *ngFor="let hobby of profileDetails?.hobbies" class="single_hobby">{{hobby}}</div>
+                    </div>
+                    <div class="add_hobby">
+                        <form (submit)="addHobby()">
+                            <input type="text" id="inputField" placeholder="add hobby" name="inputField" [value]="inputValue" (input)="onInput($event)" required>
+                            <button class="submit" type="submit">Submit</button>
+                        </form>
+                    </div>
+                </div>
+                <div class="dob_certificate" *ngIf="role==='student'">
+                    <!-- <div class="divider"></div> -->
+                    <p class="details_name background">Dob certificate</p>
+                    <img (click)="openDiv()" *ngIf="profileDetails?.dob_certificate" class="dob_certificate_img_small" [src]="'data:image/png;base64,' + profileDetails?.dob_certificate">
+                    <div class="add_hobby">
+                        <form class="dob_form" (submit)="addDobCertificate()">
+                            <input class="input_img" placeholder="dob_certificate" accept="image/*" type="file" (change)="onFileSelected($event)">
+                            <button class="submit" type="submit">Submit</button>
+                        </form>
+                    </div>
+    
+                    <div class="create_notice popup" *ngIf="open === true">
+                        <div class="notice_create_form_content popup-content">
+                            <div class="close_op"><mat-icon (click)="closeDiv()">close</mat-icon></div>
+                            <div class="teacher_list">
+                                <h5>date of birth certificate</h5>
+                                <img class="dob_certificate_img_large" [src]="'data:image/png;base64,' + profileDetails?.dob_certificate">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div *ngIf="role==='teacher'">
+                    <div class="divider"></div>
+                    <p class="details_name">Subjects</p>
+                    <div class="subjects basic-details">
+                        <div *ngFor="let subject of profileDetails?.subjects" class="single_hobby">{{subject.subject_name}}</div>
+                    </div>
+                </div>
+                <div *ngIf="role==='teacher'">
+                    <div class="divider"></div>
+                    <p class="details_name">Classes</p>
+                    <div class="classes basic-details">
+                        <div *ngFor="let class of profileDetails?.classes" class="single_hobby">{{class.class_name}}</div>
+                    </div>
+                </div>
+                <div class="update_password_option">
+                    <div class="divider"></div>
+                    <p (click)="openPasswordUpdateDiv()">Update password</p>
+                </div>
+                <div class="popup" *ngIf="passwordUpdate === true">
+                    <div class="popup-content shadow">
+                        <div class="close_op"><mat-icon (click)="closePasswordUpdateDiv()">close</mat-icon></div>
+                        <div class="update_password" *ngIf="role!=='admin'">
+                            <p class="details_name change_password_detail background">Change Password</p>
+                            <div class="add_hobby">
+                                <form [formGroup]="updatePasswordForm" (ngSubmit)="updatePassword()">
+                                    <div>
+                                    <label for="oldPassword">Old Password: </label>
+                                    <input type="password" id="oldPassword" formControlName="oldPassword">
+                                    </div>
+                                    <div>
+                                    <label for="newPassword">New Password: </label>
+                                    <input type="password" id="newPassword" formControlName="newPassword">
+                                    </div>
+                                    <div>
+                                    <label for="reenterPassword">Reenter Password: </label>
+                                    <input type="password" id="reenterPassword" formControlName="reEntereedPassword">
+                                    </div>
+                                    <button class="submit_btn" type="submit" [disabled]="!updatePasswordForm.valid">Submit</button>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="profile_bottom_right">
+                <div class="address current_address shadow">
+                    <p class="address_type"><mat-icon class="icon"> location_on</mat-icon>Current Address</p>
+                    <div class="street_address basic_details"><span class="address_info">street: </span>{{profileDetails?.current_address.street_address}}</div>
+                    <div class="divider"></div>
+                    <div class="city basic_details"><span class="address_info">city: </span>{{profileDetails?.current_address.city}}</div>
+                    <div class="divider"></div>
+                    <div class="state basic_details"><span class="address_info">state: </span>{{profileDetails?.current_address.state}}</div>
+                    <div class="divider"></div>
+                    <div class="country basic_details"><span class="address_info">country: </span>{{profileDetails?.current_address.country}}</div>
+                    <div class="divider"></div>
+                    <div class="postal_code basic_details"><span class="address_info">Pin code: </span>{{profileDetails?.current_address.postal_code}}</div>
+                </div>
+                <div class="address permanent_address shadow">
+                    <p class="address_type"><mat-icon class="icon"> location_on</mat-icon>Permanent Address</p>
+                    <div class="street_address basic_details"><span class="address_info">street: </span>{{profileDetails?.permanent_address.street_address}}</div>
+                    <div class="divider"></div>
+                    <div class="city basic_details"><span class="address_info">city: </span>{{profileDetails?.permanent_address.city}}</div>
+                    <div class="divider"></div>
+                    <div class="state basic_details"><span class="address_info">state: </span>{{profileDetails?.permanent_address.state}}</div>
+                    <div class="divider"></div>
+                    <div class="country basic_details"><span class="address_info">country: </span>{{profileDetails?.permanent_address.country}}</div>
+                    <div class="divider"></div>
+                    <div class="postal_code basic_details"><span class="address_info">Pin code: </span>{{profileDetails?.permanent_address.postal_code}}</div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

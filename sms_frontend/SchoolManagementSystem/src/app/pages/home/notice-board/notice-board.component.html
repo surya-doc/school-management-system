@@ -1,0 +1,36 @@
+<div class="desc">
+    <div class="container notice">
+        <div class="row align-items-center">
+            <div class="col-md-4 col-sm-12 align-items-center" style="text-align: center;">
+                <div class="notice-title">
+                    <div class="design">
+                    </div>
+                    <h2>
+                        <strong>Notice</strong>
+                        <br>&nbsp;&nbsp;Board
+                    </h2>
+
+                </div>
+            </div>
+            <div class="col-md-8 col-sm-12">
+                <div class="notice-container">
+                    <div class="container notices" *ngFor = "let notice of notices; let i = index" (click) = "openPopup(notice)">
+                        <div class="card">
+                            <div class="header">
+                                <div class="notice-header">{{notice?.heading}}</div>
+                                <div class="notice-issue-date">issued-on : {{notice?.startDate | date}}</div>
+                            </div>
+                            <div class="body">
+                                <div class="notice-description">{{notice?.description}}</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<br>
+<br>
+<app-notice-detail [item]="item" *ngIf="isPopupOpen" (close)="closePopup()"></app-notice-detail>

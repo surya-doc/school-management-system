@@ -1,0 +1,23 @@
+<div class="notice_card shadow">
+  <div class="style_header_border"></div>
+  <div class="notice_header">
+    <div class="notice_date">
+      <h1>{{ item?.startDate | date : "d MMMM" }}</h1>
+    </div>
+    <div class="edit_option"  (click)="openEdit()"><mat-icon class="edit">edit</mat-icon></div>
+    <div class="delete_option" (click)="deleteNotice()" *ngIf="item?.status">
+      <mat-icon class="delete">delete_outline</mat-icon>
+    </div>
+  </div>
+  <div class="notice_body">
+    <div class="notice_heading">
+      <h4>{{ item?.heading }}</h4>
+    </div>
+    <div class="notice_description">
+      <p>{{ item?.description }}</p>
+    </div>
+    <p class="view_more" (click)="openPopup()">View more</p>
+  </div>
+</div>
+<app-notice-detail [item]="item" *ngIf="isPopupOpen" (close)="closePopup()"></app-notice-detail>
+<app-create-notice  [item]="item" [opType]="opType" *ngIf="edit" (close)="closeEdit()"></app-create-notice>

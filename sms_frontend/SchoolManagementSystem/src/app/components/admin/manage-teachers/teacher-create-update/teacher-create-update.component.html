@@ -1,0 +1,142 @@
+<div class="create_teacher popup">
+    <div class="teacher_create_form_content popup-content">
+        <div class="close_op"><mat-icon (click)="closeEdit()">close</mat-icon></div>
+        <div class="inner_components">
+            <h1>{{opType}} teacher</h1>
+            <form [formGroup]="teacherCreateForm" (ngSubmit)="createTeacher()">
+                <h5>teacher id</h5>
+                <input class="input" type="number" formControlName="id" *ngIf="opType === 'Create'">
+                <div class="update_id_container" *ngIf="opType === 'Update'">{{teacherDetail?.id}}</div>
+                <span class="error_message" *ngIf="teacherCreateForm.get('id') && teacherCreateForm.get('id')?.touched && teacherCreateForm.get('id')?.invalid">Please enter a valid input</span>
+                <br> <br>
+                
+                <h5>teacher profile image</h5>
+                <input class="input_img" accept="image/*" type="file" formControlName="image" (change)="onFileSelected($event)">
+                <span class="error_message" *ngIf="teacherCreateForm.get('image') && teacherCreateForm.get('image')?.touched && teacherCreateForm.get('image')?.invalid">Please enter a valid input</span>
+                <br> <br>
+
+                <h5>teacher name</h5>
+                <input class="input" type="text" formControlName="fullName">
+                <span class="error_message" *ngIf="teacherCreateForm.get('fullName') && teacherCreateForm.get('fullName')?.touched && teacherCreateForm.get('fullName')?.invalid">Please enter a valid input</span>
+                <br> <br>
+
+                <h5>teacher DOB</h5>
+                <input class="input" type="date" formControlName="dob" value="2013-10-20">
+                <span class="error_message" *ngIf="teacherCreateForm.get('dob') && teacherCreateForm.get('dob')?.touched && teacherCreateForm.get('dob')?.invalid">Please enter a valid input</span>
+                <br> <br>
+
+                <h5>teacher email</h5>
+                <input class="input" type="email" formControlName="email" >
+                <span class="error_message" *ngIf="teacherCreateForm.get('email') && teacherCreateForm.get('email')?.touched && teacherCreateForm.get('email')?.invalid">Please enter a valid input</span>
+                <br> <br>
+
+                <h5>teacher phone number</h5>
+                <input class="input" type="text" id="phone" name="phone" formControlName="phoneNumber" appPhoneFormatter />
+                <span class="error_message" *ngIf="teacherCreateForm.get('phoneNumber') && teacherCreateForm.get('phoneNumber')?.touched && teacherCreateForm.get('phoneNumber')?.invalid">Please enter a valid input</span>
+                <br> <br>
+
+                <h5>student gender</h5>
+                <select class="input" formControlName="gender">
+                    <option value="">Select gender</option>
+                    <option value="Male">Male</option>
+                    <option value="Female">Female</option>
+                    <option value="Other">Other</option>
+                </select>
+                <span class="error_message" *ngIf="teacherCreateForm.get('gender') && teacherCreateForm.get('gender')?.touched && teacherCreateForm.get('gender')?.invalid">Please enter a valid input</span>
+                <br> <br>
+
+                <h5>teacher qualification</h5>
+                <select class="input" formControlName="qualification" (change)="getClasses($event)">
+                    <option value="">Select teacher's qualification</option>
+                    <option value="M.Sc">Msc</option>
+                    <option value="B.Sc">Bsc</option>
+                    <option value="PhD">PhD</option>
+                </select>
+                <span class="error_message" *ngIf="teacherCreateForm.get('qualification') && teacherCreateForm.get('qualification')?.touched && teacherCreateForm.get('qualification')?.invalid">Please enter a valid input</span>
+                <br> <br>
+
+                <h5>Classes teacher can teach</h5>
+                <select class="input" *ngIf="classes.length > 0" formControlName="classes" multiple>
+                    <option *ngFor="let class of classes" [value]="class?.class_id">{{class?.class_name}}</option>
+                </select>
+                <span class="error_message" *ngIf="teacherCreateForm.get('subjects') && teacherCreateForm.get('subjects')?.touched && teacherCreateForm.get('subjects')?.invalid">Please enter a valid input</span>
+                <br> <br>
+                
+                <h5>preferred teaching subjects</h5>
+                <select class="input" *ngIf="subjects.length > 0" formControlName="subjects" multiple>
+                    <option *ngFor="let subject of subjects" [value]="subject?.subject_id">{{subject?.subject_name}}</option>
+                </select>
+                <span class="error_message" *ngIf="teacherCreateForm.get('subjects') && teacherCreateForm.get('subjects')?.touched && teacherCreateForm.get('subjects')?.invalid">Please enter a valid input</span>
+                <br> <br>
+
+                <div class="address_detail_form">
+                    <div class="current_detail">
+                        <h1>Current Address</h1>
+                        <h5>Street</h5>
+                        <input class="input" type="text" formControlName="cur_street">
+                        <span class="error_message" *ngIf="teacherCreateForm.get('cur_street') && teacherCreateForm.get('cur_street')?.touched && teacherCreateForm.get('cur_street')?.invalid">Please enter a valid input</span>
+                        <br> <br>
+
+                        <!-- <h5>Apartment/Building</h5>
+                        <input class="input" type="text" formControlName="cur_apt">
+                        <span class="error_message" *ngIf="teacherCreateForm.get('cur_apt') && teacherCreateForm.get('cur_apt')?.touched && teacherCreateForm.get('cur_apt')?.invalid">Please enter a valid input</span>
+                        <br> <br> -->
+
+                        <h5>City</h5>
+                        <input class="input" type="text" formControlName="cur_city">
+                        <span class="error_message" *ngIf="teacherCreateForm.get('cur_city') && teacherCreateForm.get('cur_city')?.touched && teacherCreateForm.get('cur_city')?.invalid">Please enter a valid input</span>
+                        <br> <br>
+
+                        <h5>State</h5>
+                        <input class="input" type="text" formControlName="cur_state">
+                        <span class="error_message" *ngIf="teacherCreateForm.get('cur_state') && teacherCreateForm.get('cur_state')?.touched && teacherCreateForm.get('cur_state')?.invalid">Please enter a valid input</span>
+                        <br> <br>
+
+                        <h5>Country</h5>
+                        <input class="input" type="text" formControlName="cur_country">
+                        <span class="error_message" *ngIf="teacherCreateForm.get('cur_country') && teacherCreateForm.get('cur_country')?.touched && teacherCreateForm.get('cur_country')?.invalid">Please enter a valid input</span>
+                        <br> <br>
+
+                        <h5>Pin code</h5>
+                        <input class="input" type="text" formControlName="cur_postalCode">
+                        <span class="error_message" *ngIf="teacherCreateForm.get('cur_postalCode') && teacherCreateForm.get('cur_postalCode')?.touched && teacherCreateForm.get('cur_postalCode')?.invalid">Please enter a valid input</span>
+                        <br> <br>
+                    </div>
+                    <div class="permanent_detail">
+                        <h1>Permanent Address</h1>
+                        <h5>Street</h5>
+                        <input class="input" type="text" formControlName="per_street">
+                        <span class="error_message" *ngIf="teacherCreateForm.get('per_street') && teacherCreateForm.get('per_street')?.touched && teacherCreateForm.get('per_street')?.invalid">Please enter a valid input</span>
+                        <br> <br>
+
+                        <!-- <h5>Apartment/Building</h5>
+                        <input class="input" type="text" formControlName="per_apt">
+                        <span class="error_message" *ngIf="teacherCreateForm.get('per_apt') && teacherCreateForm.get('per_apt')?.touched && teacherCreateForm.get('per_apt')?.invalid">Please enter a valid input</span>
+                        <br> <br> -->
+
+                        <h5>City</h5>
+                        <input class="input" type="text" formControlName="per_city">
+                        <span class="error_message" *ngIf="teacherCreateForm.get('per_city') && teacherCreateForm.get('per_city')?.touched && teacherCreateForm.get('per_city')?.invalid">Please enter a valid input</span>
+                        <br> <br>
+
+                        <h5>State</h5>
+                        <input class="input" type="text" formControlName="per_state">
+                        <span class="error_message" *ngIf="teacherCreateForm.get('per_state') && teacherCreateForm.get('per_state')?.touched && teacherCreateForm.get('per_state')?.invalid">Please enter a valid input</span>
+                        <br> <br>
+
+                        <h5>Country</h5>
+                        <input class="input" type="text" formControlName="per_country">
+                        <span class="error_message" *ngIf="teacherCreateForm.get('per_country') && teacherCreateForm.get('per_country')?.touched && teacherCreateForm.get('per_country')?.invalid">Please enter a valid input</span>
+                        <br> <br>
+
+                        <h5>Pin code</h5>
+                        <input class="input" type="text" formControlName="per_postalCode">
+                        <span class="error_message" *ngIf="teacherCreateForm.get('per_postalCode') && teacherCreateForm.get('per_postalCode')?.touched && teacherCreateForm.get('per_postalCode')?.invalid">Please enter a valid input</span>
+                        <br> <br>
+                    </div>
+                </div>
+                <button [disabled]="teacherCreateForm.invalid" class="submit btn">Submit</button>
+            </form>
+        </div>
+    </div>
+</div>

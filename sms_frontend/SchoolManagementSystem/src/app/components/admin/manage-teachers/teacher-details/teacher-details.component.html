@@ -1,0 +1,71 @@
+<div class="popup">
+    <div class="popup-content shadow">
+      <div class="close_op"><mat-icon (click)="closePopup()">close</mat-icon></div>
+        <div class="teacher_basic_details row">
+          <div class="left profile_pic col-lg-4">
+            <img *ngIf="item?.profile_pic" [src]="'data:image/png;base64,' + item?.profile_pic" alt="">
+            <img *ngIf="!item?.profile_pic && item?.gender === 'Male'" src="https://www.svgrepo.com/show/382109/male-avatar-boy-face-man-user-7.svg" alt="g">
+            <img *ngIf="!item?.profile_pic && item?.gender === 'Female'" src="https://www.svgrepo.com/show/382097/female-avatar-girl-face-woman-user-9.svg" alt="g">
+          </div>
+          <div class="right profile_details col-lg-8">
+            <div class="ind_detail">
+              <p>Name: </p>
+              <div class="std_text teacher_name">{{item?.fullName}}</div>
+            </div>
+            <div class="ind_detail">
+              <p>Email: </p>
+              <div class="std_text teacher_email">{{item?.email}}</div>
+            </div>
+            <div class="ind_detail">
+              <p>Phone: </p>
+              <div class="std_text teacher_ph_no">{{item?.phoneNumber}}</div>
+            </div>
+            <div class="ind_detail">
+              <p>Gender: </p>
+              <div class="std_text teacher_gender">{{item?.gender}}</div>
+            </div>
+            <div class="ind_detail hobby_container">
+              <p>Classes: </p>
+              <div class="hobbies" *ngFor="let class of item?.classes">{{class?.class_name}}</div>
+            </div>
+            <div class="ind_detail hobby_container">
+              <p>Subjects: </p>
+              <div class="hobbies" *ngFor="let subject of item?.subjects">{{subject?.subject_name}}</div>
+            </div>
+          </div>
+        </div>
+        <div class="address">
+          <div class="current_address">
+            <h4>Current Address</h4>
+            <div class="address_detail">
+              <h5>Street</h5>
+              <p>{{item?.current_address.street_address}}</p>
+              <h5>City</h5>
+              <p>{{item?.current_address.city}}</p>
+              <h5>Pin code</h5>
+              <p>{{item?.current_address.postal_code}}</p>
+              <h5>State</h5>
+              <p>{{item?.current_address.state}}</p>
+              <h5>Country</h5>
+              <p>{{item?.current_address.country}}</p>
+            </div>
+          </div>
+          <div class="permanent_address">
+            <h4>Permanent Address</h4>
+            <div class="address_detail">
+              <h5>Street</h5>
+              <p>{{item?.permanent_address.street_address}}</p>
+              <h5>City</h5>
+              <p>{{item?.permanent_address.city}}</p>
+              <h5>Pin code</h5>
+              <p>{{item?.permanent_address.postal_code}}</p>
+              <h5>State</h5>
+              <p>{{item?.permanent_address.state}}</p>
+              <h5>Country</h5>
+              <p>{{item?.permanent_address.country}}</p>
+            </div>
+          </div>
+        </div>
+      <button class="close" (click)="closePopup()">Close</button>
+    </div>
+  </div>

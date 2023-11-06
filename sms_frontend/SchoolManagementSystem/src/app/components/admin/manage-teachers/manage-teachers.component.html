@@ -1,0 +1,25 @@
+<div class="teacher_container container">
+    <div class="manage_heading_section">
+        <div class="left">All teachers</div>
+        <div class="right" *ngIf="role === 'admin'">
+            <button type="button" class="btn add_teacher_btn" (click)="openEdit()">
+                Add teacher
+                <span class="add_icon">
+                    <mat-icon>add</mat-icon>
+                </span>
+            </button>
+            <!-- <app-dropdown [options]="sortOptions"></app-dropdown> -->
+        </div>
+    </div>
+    <div class="all_teacher_container">
+        <div class="teachers" *ngFor="let teacher of allTeachers">
+            <app-teacher-card [item]="teacher"></app-teacher-card>
+        </div>
+        <div class="pagination_button_container">
+            <button class="prev_btn" (click)="prevClick()" [disabled]="pageNo === 0"><mat-icon>arrow_left</mat-icon>prev</button>
+            <button class="next_btn" (click)="nextClick()" [disabled]="allTeachers?.length === 0 || allTeachers?.length < 10">next<mat-icon>arrow_right</mat-icon></button>
+        </div>
+    </div>
+</div>
+
+<app-teacher-create-update  [teacherDetail]="" [opType]="opType" *ngIf="edit" (close)="closeEdit()"></app-teacher-create-update>
